@@ -15,8 +15,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
- //  "/api/register
+// API route group
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->post('register', 'RegisterController@register');
- 
+     //  "/api/register
+      $router->post('register', 'RegisterController@register');
+      // Matches "/api/login
+      $router->post('login', 'RegisterController@login');
  });
