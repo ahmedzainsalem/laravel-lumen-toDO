@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use  App\User;
+use Tymon\JWTAuth\JWTAuth;
 
 class RegisterController extends Controller
 {
+    /**
+     * @var Tymon\JWTAuth\JWTAuth
+     */
+    protected $jwt;
+
+    public function __construct(JWTAuth $jwt)
+    {
+        $this->jwt = $jwt;
+    }
+    
     /**
      * Store a new user.
      *
@@ -81,6 +92,7 @@ class RegisterController extends Controller
         }
         $user = Auth::user();
         $user->token=$token;
+        $user->token_type = 'bearer';
         $data=array(
             'status'=>true,
             'code'=>200,
@@ -88,6 +100,22 @@ class RegisterController extends Controller
             'userData'=>$user);
 
         return response()->json( $data);
+    }
+
+    public function logout(Request $request)
+    {
+        $token =  str_replace('Bearer ','',$request->header('Authorization'));
+        $this->jwt->setToken($token)->invalidate();
+        $this->jwt->setToken($token)->invalidate(true);
+        Auth::logout();
+        $this->jwt->invalidate($this->jwt->getToken());
+        $this->jwt->parseToken()->invalidate();
+        return response()->json([
+            'status'=>true,
+            'code'=>200,
+            'message'=>'Successfully logged out'
+        ]);
+         
     }
 
 

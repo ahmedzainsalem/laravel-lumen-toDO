@@ -30,4 +30,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
       // Matches "/api/users
       $router->get('users', 'UserController@allUsers');
+      // "/api/logout
+      $router->get('logout', 'RegisterController@logout');
  });
