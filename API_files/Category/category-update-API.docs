@@ -1,0 +1,31 @@
+﻿Edit Category API:
+
+URL:localhost:8000/api/category/update/1
+Method: PUT
+
+Attribute:
+            'name' => 'required',
+             
+Example:
+        Body:
+            'name' => 'Food',
+             
+
+        Header:bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU3ODU3NDczNywiZXhwIjoxNTc4NTc4MzM3LCJuYmYiOjE1Nzg1NzQ3MzcsImp0aSI6IktiTHpRU1NwSExBWXF4elQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.JQd_F62dkgyT2SML6Y4CkSIIf_bsGMiOxVBOBMYfJaA
+
+ Example Response:
+ 
+            {
+                "status": true,
+                "code": 200,
+                "message": "success",
+                "TodoData": {
+                    "id": 1,
+                    "name": "Food",
+                    "created_at": "2020-01-09 17:23:56",
+                    "updated_at": "2020-01-09 17:45:45"
+                }
+            }  
+
+
+

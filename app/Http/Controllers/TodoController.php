@@ -88,17 +88,7 @@
                 ]);
             
         }
-        /**
-         * Show the form for editing the specified resource.
-         *
-         * @param  int  $id
-         * @return \Illuminate\Http\Response
-         */
-        public function edit($id)
-        {
-            $todo = Todo::where('id', $id)->get();
-            return view('todo.edittodo',['todos' => $todo]);
-        }
+      
         /**
          * Update the specified resource in storage.
          *
@@ -109,10 +99,12 @@
         public function update(Request $request, $id)
         {
             $this->validate($request, [
-            'todo' => 'filled',
-            'description' => 'filled',
-            'category' => 'filled'
+                'name' => 'required',
+                'status' => 'required',
+                'description' => 'required',
+                'category_id' => 'required'
              ]);
+
             $todo = Todo::find($id);
             if($todo->fill($request->all())->save()){
                return response()->json([
@@ -188,7 +180,7 @@
                 $toDoResult->where('category_id', $category_id);
             }
 
-             // Search for a toDo based on category_id.
+             // Search for a toDo based on status.
              if ($request->has('status')) {
 
                 $status= $request->input('status'); 

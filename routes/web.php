@@ -31,5 +31,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     toDo
     */
     require_once 'component/todo.php';
+    /*
+    Category
+    */
+    require_once 'component/category.php';
 
  });
