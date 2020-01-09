@@ -155,6 +155,9 @@
          * @return \Illuminate\Http\Response
          */
         public function filter(Request $request,Todo $Todo){
+
+            $toDoResult = Auth::user()->todo();
+
             // Search for a toDo based on Month.
             if ($request->has('month')) {
 
@@ -164,7 +167,7 @@
                     'month' => 'digits_between:1,2',
                 ]);
                 
-              $data= $Todo->whereRaw('MONTH(created_at) = '.$month)->paginate(5);
+                $toDoResult->whereRaw('MONTH(created_at) = '.$month);
             }
 
             // Search for a toDo based on Month.
@@ -175,30 +178,31 @@
                 $this->validate($request, [
                     'year' => 'digits_between:1,4',
                 ]);
-                $data= $Todo->whereRaw('YEAR(created_at) = '.$year)->paginate(5);
+                $toDoResult->whereRaw('YEAR(created_at) = '.$year);
             }
 
              // Search for a toDo based on category_id.
              if ($request->has('category_id')) {
 
                 $category_id = $request->input('category_id'); 
-                $data= Todo::where('category_id', $category_id)->paginate(5);
+                $toDoResult->where('category_id', $category_id);
             }
 
              // Search for a toDo based on category_id.
              if ($request->has('status')) {
 
                 $status= $request->input('status'); 
-                $data= Todo::where('status', $status)->paginate(5);
+                $toDoResult->where('status', $status);
             }
              
-               
-                if($data->count() > 0){
+                $toDoData= $toDoResult->paginate(5);
+                
+                if($toDoData->count() > 0){
                     return response()->json([
                         'status'=>true,
                         'code'=>200,
                         'message' => 'success',
-                        'TodoData'=>$data
+                        'TodoData'=>$toDoData
                     ]);
                 }else{
                     return response()->json([
