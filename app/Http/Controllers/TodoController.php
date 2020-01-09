@@ -1,9 +1,16 @@
 <?php
  
     namespace App\Http\Controllers;
+
     use Illuminate\Http\Request;
     use App\Todo;
     use Illuminate\Support\Facades\Auth;
+    use League\Fractal;
+    use League\Fractal\Manager;
+    use League\Fractal\Resource\Item;
+    use League\Fractal\Resource\Collection;
+    use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+    use App\Transformers\ToDoTransformer;
 
     class TodoController extends Controller
     {
@@ -12,9 +19,12 @@
          *
          * @return void
          */
+        private $fractal;
+
         public function __construct()
         {
             $this->middleware('auth');
+            $this->fractal = new Manager(); 
         }
         
         /**
@@ -24,13 +34,12 @@
          */
         public function index(Request $request)
         {
-            $todo = Auth::user()->todo()->paginate(5);
-            return response()->json([
-                'status'=>true,
-                'code'=>200,
-                'message' => 'success',
-                'result' => $todo
-            ]);
+             
+            $paginator = Todo::paginate();
+            $todo = $paginator->getCollection();
+            $resource = new Collection($todo, new ToDoTransformer);
+            $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
+            return $this->fractal->createData($resource)->toArray();
         }
         /**
          * Store a newly created resource in storage.
