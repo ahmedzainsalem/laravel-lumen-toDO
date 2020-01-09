@@ -28,9 +28,11 @@ Example:
                     "remember_token": null,
                     "created_at": "2020-01-09 07:34:28",
                     "updated_at": "2020-01-09 07:34:28",
-                    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU3ODU1ODAwMSwiZXhwIjoxNTc4NTYxNjAxLCJuYmYiOjE1Nzg1NTgwMDEsImp0aSI6InhqSU1ZZ1pOdUg3R3R3RFEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PFFBarC8MjI5VkgUTNCarSZJX-Cxy-wCGilksIDSBGs"
+                    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU3ODU2NTM3NiwiZXhwIjoxNTc4NTY4OTc2LCJuYmYiOjE1Nzg1NjUzNzYsImp0aSI6ImNYVEw3WWV4MldsUWNFMWoiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.OKZWIVGX0ftMtXMUfZ4L5oTUCsbkW4kG4voPSlt0G_M",
+                    "token_type": "bearer",
+                    "expires_in": 36000
                 }
-            }     
+            }   
 
 
 

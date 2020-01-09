@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use  App\User;
+use App\User;
 use Tymon\JWTAuth\JWTAuth;
 
 class RegisterController extends Controller
@@ -93,6 +93,7 @@ class RegisterController extends Controller
         $user = Auth::user();
         $user->token=$token;
         $user->token_type = 'bearer';
+        $user->expires_in = Auth::factory()->getTTL() * 600;
         $data=array(
             'status'=>true,
             'code'=>200,

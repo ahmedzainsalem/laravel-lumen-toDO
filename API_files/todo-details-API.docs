@@ -1,0 +1,32 @@
+﻿Get toDo Details API:
+
+URL:localhost:8000/api/todo/show/1
+Method: GET
+
+ 
+Example: 
+
+        Header:bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU3ODU3NDczNywiZXhwIjoxNTc4NTc4MzM3LCJuYmYiOjE1Nzg1NzQ3MzcsImp0aSI6IktiTHpRU1NwSExBWXF4elQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.JQd_F62dkgyT2SML6Y4CkSIIf_bsGMiOxVBOBMYfJaA
+
+ Example Response:
+
+           {
+    "status": true,
+    "code": 200,
+    "message": "success",
+    "TodoData": [
+        {
+            "id": 1,
+            "name": "todo test 1",
+            "description": "todo description test",
+            "status": "Overdue",
+            "category_id": 1,
+            "user_id": 2,
+            "created_at": "2020-01-09 11:30:17",
+            "updated_at": "2020-01-09 11:30:17"
+        }
+    ]
+}
+
+
+

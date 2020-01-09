@@ -2,6 +2,10 @@ Get User By id API:
 
 URL:localhost:8000/api/users/1
 Method: GET
+
+Example :
+            Header:bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU3ODU2NTM3NiwiZXhwIjoxNTc4NTY4OTc2LCJuYmYiOjE1Nzg1NjUzNzYsImp0aSI6ImNYVEw3WWV4MldsUWNFMWoiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.OKZWIVGX0ftMtXMUfZ4L5oTUCsbkW4kG4voPSlt0G_M
+ 
  
 
  Example Response:

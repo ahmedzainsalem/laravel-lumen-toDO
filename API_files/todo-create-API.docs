@@ -1,0 +1,39 @@
+﻿todo/create API:
+
+URL:localhost:8000/api/todo/create
+Method: POST
+
+Attribute:
+            'name' => 'required',
+            'status' => 'required',
+            'description' => 'required',
+            'category_id' => 'required'
+Example:
+        Body:
+            'name' => 'todo test 1',
+            'status' => 'Overdue',
+            'description' => 'todo description test',
+            'category_id' => '1'
+
+        Header:bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU3ODU3NDczNywiZXhwIjoxNTc4NTc4MzM3LCJuYmYiOjE1Nzg1NzQ3MzcsImp0aSI6IktiTHpRU1NwSExBWXF4elQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.JQd_F62dkgyT2SML6Y4CkSIIf_bsGMiOxVBOBMYfJaA
+
+ Example Response:
+
+            {
+                "status": true,
+                "code": 200,
+                "message": "success",
+                "TodoData": {
+                    "name": "todo test 1",
+                    "status": "Overdue",
+                    "description": "todo description test",
+                    "category_id": "1",
+                    "user_id": 1,
+                    "updated_at": "2020-01-09 12:59:27",
+                    "created_at": "2020-01-09 12:59:27",
+                    "id": 8
+                }
+            }     
+
+
+
