@@ -24,7 +24,7 @@
          */
         public function index(Request $request)
         {
-            $todo = Auth::user()->todo()->get();
+            $todo = Auth::user()->todo()->paginate(5);
             return response()->json([
                 'status'=>true,
                 'code'=>200,
@@ -164,7 +164,7 @@
                     'month' => 'digits_between:1,2',
                 ]);
                 
-              $data= $Todo->whereRaw('MONTH(created_at) = '.$month)->get();
+              $data= $Todo->whereRaw('MONTH(created_at) = '.$month)->paginate(5);
             }
 
             // Search for a toDo based on Month.
@@ -175,21 +175,21 @@
                 $this->validate($request, [
                     'year' => 'digits_between:1,4',
                 ]);
-                $data= $Todo->whereRaw('YEAR(created_at) = '.$year)->get();
+                $data= $Todo->whereRaw('YEAR(created_at) = '.$year)->paginate(5);
             }
 
              // Search for a toDo based on category_id.
              if ($request->has('category_id')) {
 
                 $category_id = $request->input('category_id'); 
-                $data= Todo::where('category_id', $category_id)->get();
+                $data= Todo::where('category_id', $category_id)->paginate(5);
             }
 
              // Search for a toDo based on category_id.
              if ($request->has('status')) {
 
                 $status= $request->input('status'); 
-                $data= Todo::where('status', $status)->get();
+                $data= Todo::where('status', $status)->paginate(5);
             }
              
                

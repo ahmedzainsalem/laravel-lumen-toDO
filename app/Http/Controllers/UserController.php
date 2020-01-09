@@ -38,7 +38,7 @@ class UserController extends Controller
          return response()->json([
             'status'=>true,
             'code'=>200,
-            'users' =>  User::all()
+            'users' =>  User::paginate(5)
         ], 200);
     }
     /**

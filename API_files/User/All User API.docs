@@ -9,36 +9,37 @@ Example :
 
  Example Response:
 
-           {
+          {
                 "status": true,
                 "code": 200,
-                "users": [
-                    {
-                        "id": 1,
-                        "first_name": "Ahmed",
-                        "last_name": "Salem",
-                        "email": "ahmedzainsalem@gmail.com",
-                        "mobile": "0522911747",
-                        "gender": "Male",
-                        "birthday": "1984-09-01",
-                        "remember_token": null,
-                        "created_at": "2020-01-09 07:34:28",
-                        "updated_at": "2020-01-09 07:34:28"
-                    },
-                    {
-                        "id": 2,
-                        "first_name": "ahmed",
-                        "last_name": "salem",
-                        "email": "ahmedzaxxinsdadssxlem@gmail.com",
-                        "mobile": "01285355575",
-                        "gender": "Male",
-                        "birthday": "1984-09-01",
-                        "remember_token": null,
-                        "created_at": "2020-01-09 09:00:40",
-                        "updated_at": "2020-01-09 09:00:40"
-                    }
-                ]
-            } 
+                "users": {
+                    "current_page": 1,
+                    "data": [
+                        {
+                            "id": 1,
+                            "first_name": "Ahmed",
+                            "last_name": "Salem",
+                            "email": "ahmedzainsalem@gmail.com",
+                            "mobile": "0522911747",
+                            "gender": "Male",
+                            "birthday": "1984-09-01",
+                            "remember_token": null,
+                            "created_at": "2020-01-09 15:02:50",
+                            "updated_at": "2020-01-09 15:02:50"
+                        }
+                    ],
+                    "first_page_url": "http://localhost:8000/api/users?page=1",
+                    "from": 1,
+                    "last_page": 1,
+                    "last_page_url": "http://localhost:8000/api/users?page=1",
+                    "next_page_url": null,
+                    "path": "http://localhost:8000/api/users",
+                    "per_page": 5,
+                    "prev_page_url": null,
+                    "to": 1,
+                    "total": 1
+                }
+            }
 
 
 
