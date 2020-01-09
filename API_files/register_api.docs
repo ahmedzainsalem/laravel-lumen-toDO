@@ -1,0 +1,43 @@
+﻿Reqister API:
+
+URL:localhost:8000/api/register
+Method: POST
+
+Attribute:
+            'first_name' => 'required|alpha|min:2|max:255',
+            'last_name' => 'required|alpha|min:2|max:255',
+            'mobile' => 'required|digits:11',
+            'gender' => 'required',
+            'birthday' => 'required|date_format:Y-m-d|before:today|nullable',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed'
+Example:
+
+            'first_name' : 'Ahmed'
+            'last_name' :'Salem'
+            'mobile' :'0522911747'
+            'gender':'Male'
+            'birthday':'1984-09-01'
+            'email':'ahmedzainsalem@gmail.com'
+            'password':'Admin@123'
+            'password_confirmation':'Admin@123'
+
+ Example Response:
+
+            {
+                "user": {
+                    "first_name": "ahmed",
+                    "last_name": "salem",
+                    "mobile": "01285355575",
+                    "gender": "Male",
+                    "birthday": "1984-09-01",
+                    "email": "ahmedzaxxinsdadssxlem@gmail.com",
+                    "updated_at": "2020-01-09 07:33:58",
+                    "created_at": "2020-01-09 07:33:58",
+                    "id": 9
+                },
+                "message": "User CREATED"
+            }       
+
+
+
