@@ -33,31 +33,31 @@ php artisan migrate
 
 you can find the APIs structure as follow:
 
-##Api-files Folder ( contains )
--Auth
-    *Login_api.docs
-    *register_api.docs
--Category
-    *category-create-API.docs
-    *category-delete-API.docs
-    *ategory-details-API.docs
-    *category-get_all-API.docs
-    *category-update-API.docs
--toDo
-    *todo-create-API.docs
-    *todo-delete-API.docs
-    *todo-details-API.docs
-    *todo-filter-all-API.docs
-    *todo-filter-category-API.docs
-    *todo-filter-month-API.docs
-    *todo-filter-status-API.docs
-    *todo-filter-year-API.docs
-    *todo-get_all-API.docs
-    *todo-update-API.docs
--User
-    *All User API.docs
-    *Profile_api.docs
-    *user_by_id_api.docs
+# Api-files Folder ( contains )
+- Auth
+    * Login_api.docs
+    * register_api.docs
+- Category
+    * category-create-API.docs
+    * category-delete-API.docs
+    * category-details-API.docs
+    * category-get_all-API.docs
+    * category-update-API.docs
+- toDo
+    * todo-create-API.docs
+    * todo-delete-API.docs
+    * todo-details-API.docs
+    * todo-filter-all-API.docs
+    * todo-filter-category-API.docs
+    * todo-filter-month-API.docs
+    * todo-filter-status-API.docs
+    * todo-filter-year-API.docs
+    * todo-get_all-API.docs
+    * todo-update-API.docs
+- User
+    * All User API.docs
+    * Profile_api.docs
+    * user_by_id_api.docs
  
 
 
